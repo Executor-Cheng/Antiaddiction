@@ -1,2 +1,2 @@
 # Antiaddiction
-An Spigot AntiAddiction plugin that quert through Tencent QQ
+An Spigot AntiAddiction plugin that query through Tencent QQ
