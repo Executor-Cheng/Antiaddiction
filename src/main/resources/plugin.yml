@@ -1,0 +1,5 @@
+name: AntiaddictionByQQ
+version: '${project.version}'
+main: cc.silenter.antiaddictionbyqq.AntiaddictionByQQ
+api-version: 1.17
+depend: [MiraiMC]
