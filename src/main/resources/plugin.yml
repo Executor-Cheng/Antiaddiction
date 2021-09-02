@@ -2,3 +2,4 @@ name: AntiaddictionByQQ
 version: '${project.version}'
 main: cc.silenter.antiaddictionbyqq.AntiaddictionByQQ
 depend: [MiraiMC]
+softdepend: [AuthMe]

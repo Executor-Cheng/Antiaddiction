@@ -14,3 +14,5 @@ settings:
   #设置为0不使用节假日API，设置为1使用本地节假日API（Holiday.json），设置为2使用网页节假日API http://timor.tech/api/holiday/year 设置成其他则不允许未成年人游玩
   use_holiday: 2
   time: 30
+  #启用AuthMe支持可以让玩家在没有登录的时候不被倒计时
+  authme: true

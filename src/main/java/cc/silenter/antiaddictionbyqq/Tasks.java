@@ -2,6 +2,7 @@ package cc.silenter.antiaddictionbyqq;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import fr.xephi.authme.api.v3.AuthMeApi;
 import me.dreamvoid.miraimc.api.MiraiMC;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -36,7 +37,17 @@ public class Tasks extends BukkitRunnable {
                 i.kickPlayer(instance.getConfig().getString("message.timeout"));
                 continue;
             }
-            Storage.time.put(i.getUniqueId().toString(), Storage.time.get(i.getUniqueId().toString()) - 1);
+            //-1S……-1S……
+            if (instance.getConfig().getBoolean("settings.authme")) {
+                if (!AuthMeApi.getInstance().isAuthenticated(i)) {
+                    continue;
+                } else {
+                    Storage.time.put(i.getUniqueId().toString(), Storage.time.get(i.getUniqueId().toString()) - 1);
+                }
+            } else {
+                Storage.time.put(i.getUniqueId().toString(), Storage.time.get(i.getUniqueId().toString()) - 1);
+            }
+
             if (QQ.equals("0")) {
                 i.sendTitle(instance.getConfig().getString("message.not_bind1"), instance.getConfig().getString("message.not_bind2"), 0, 40, 0);
                 continue;

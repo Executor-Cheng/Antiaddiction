@@ -24,6 +24,10 @@ public final class AntiaddictionByQQ extends JavaPlugin {
             getDataFolder().mkdirs();
             saveDefaultConfig();
         }
+        if(!this.getServer().getPluginManager().isPluginEnabled("AuthMe")||this.getConfig().getBoolean("settings.authme")){
+            this.getConfig().set("settings.authme",false);
+            log.info("Didn't find AuthMe, reset authme to false");
+        }
         for (Player i: Bukkit.getOnlinePlayers()){
             Storage.time.put(i.getUniqueId().toString(),instance.getConfig().getInt("settings.time"));
             Storage.isChecked.put(i.getUniqueId().toString(),false);
